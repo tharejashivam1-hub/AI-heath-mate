@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI HealthMate Dashboard</title>
+
+<link rel="stylesheet" href="dashboard.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+
+</head>
+
+<body>
+
+<header>
+
+<h2><i class="fa-solid fa-heart-pulse"></i> AI HealthMate</h2>
+
+<nav>
+
+<a href="index.html">Home</a>
+<a href="#">Dashboard</a>
+<a href="#">Reports</a>
+<a href="#">Contact</a>
+
+</nav>
+
+</header>
+
+<section class="welcome">
+
+<h1>Welcome Back 👋</h1>
+
+<p>Your health summary for today.</p>
+
+</section>
+
+<div class="dashboard">
+
+<div class="card">
+
+<i class="fa-solid fa-heart-circle-check icon"></i>
+
+<h3>Health Score</h3>
+
+<h2>92%</h2>
+
+<p>Excellent</p>
+
+</div>
+
+<div class="card">
+
+<i class="fa-solid fa-glass-water icon"></i>
+
+<h3>Water Intake</h3>
+
+<h2 id="water">5 Glasses</h2>
+
+<button onclick="addWater()">+ Add Water</button>
+
+</div>
+
+<div class="card">
+
+<i class="fa-solid fa-bed icon"></i>
+
+<h3>Sleep</h3>
+
+<h2>7.5 hrs</h2>
+
+<p>Good Sleep</p>
+
+</div>
+
+<div class="card">
+
+<i class="fa-solid fa-person-running icon"></i>
+
+<h3>Exercise</h3>
+
+<h2>45 mins</h2>
+
+<p>Completed</p>
+
+</div>
+
+<div class="card">
+
+<i class="fa-solid fa-mobile-screen icon"></i>
+
+<h3>Screen Time</h3>
+
+<h2>3 hrs</h2>
+
+<p>Healthy</p>
+
+</div>
+
+<div class="card">
+
+<i class="fa-solid fa-face-smile icon"></i>
+
+<h3>Mood</h3>
+
+<h2>😊 Happy</h2>
+
+</div>
+
+<div class="card">
+
+<i class="fa-solid fa-weight-scale icon"></i>
+
+<h3>BMI</h3>
+
+<input
+type="number"
+id="weight"
+placeholder="Weight (kg)">
+
+<input
+type="number"
+id="height"
+placeholder="Height (cm)">
+
+<button onclick="calculateBMI()">
+Calculate
+</button>
+
+<h3 id="bmiResult"></h3>
+
+</div>
+
+<div class="card">
+
+<i class="fa-solid fa-pills icon"></i>
+
+<h3>Medicine Reminder</h3>
+
+<p>Vitamin D - 8:00 PM</p>
+
+<button>Mark as Taken</button>
+
+</div>
+
+<div class="card emergency">
+
+<i class="fa-solid fa-triangle-exclamation icon"></i>
+
+<h3>Emergency SOS</h3>
+
+<p>Call Emergency Contact</p>
+
+<button>Emergency</button>
+
+</div>
+
+</div>
+
+<script src="dashboard.js"></script>
+
+</body>
+</html>
