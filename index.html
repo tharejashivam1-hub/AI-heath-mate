@@ -215,7 +215,880 @@
         </div>
       </section>
 
+      <!-- PATIENT FOLLOW-UP -->
+<section id="followup" class="soft-bg">
+  <div class="container">
+
+    <div class="section-head reveal">
+      <span class="eyebrow">Patient Follow-Up</span>
+      <h2>Monitor patient care and follow-ups</h2>
+      <p>Track follow-up status, care notes and upcoming patient actions.</p>
+    </div>
+
+    <!-- SAMPLE PATIENT RECORD -->
+    <div class="followup-record glass reveal">
+
+      <div class="record-header">
+
+        <div class="record-patient">
+          <div class="patient-avatar">
+            <i data-lucide="user-round"></i>
+          </div>
+
+          <div>
+            <h3>Patient #001</h3>
+            <p>Routine Health Monitoring</p>
+          </div>
+        </div>
+
+        <!-- FOLLOW-UP BADGE -->
+        <span id="followup-badge" class="followup-badge badge-upcoming">
+          Upcoming
+        </span>
+
+      </div>
+
+      <div class="record-details">
+
+        <div>
+          <span>Last Visit</span>
+          <strong>05 Aug 2026</strong>
+        </div>
+
+        <div>
+          <span>Next Follow-Up</span>
+          <strong>12 Aug 2026</strong>
+        </div>
+
+        <div>
+          <span>Risk Level</span>
+          <strong>Low Risk</strong>
+        </div>
+
+        <div>
+          <span>Primary Symptom</span>
+          <strong>Fatigue</strong>
+        </div>
+
+      </div>
+
+      <!-- FOLLOW-UP UPDATE FORM -->
+      <div class="followup-update">
+
+        <h4>Update Follow-Up Status</h4>
+
+        <label for="followup-status">
+          Follow-Up Status
+        </label>
+
+        <select id="followup-status">
+
+          <option value="Upcoming">
+            Upcoming
+          </option>
+
+          <option value="Due Today">
+            Due Today
+          </option>
+
+          <option value="Overdue">
+            Overdue
+          </option>
+
+          <option value="Completed">
+            Completed
+          </option>
+
+        </select>
+
+
+        <label for="followup-note">
+          Follow-Up Note
+        </label>
+
+        <textarea
+          id="followup-note"
+          rows="4"
+          placeholder="Enter patient follow-up notes..."
+        ></textarea>
+
+
+        <button
+          id="save-followup"
+          class="followup-save-btn"
+          type="button"
+        >
+          <i data-lucide="save" width="17"></i>
+          Save Update
+        </button>
+
+        <p id="followup-saved" class="followup-saved-message">
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- HEALTH RECORD SEARCH & FILTERS -->
+<section id="health-records">
+  <div class="container">
+
+    <div class="section-head reveal">
+      <span class="eyebrow">Health Records</span>
+      <h2>Search and filter health records</h2>
+      <p>
+        Quickly find patient records using healthcare-specific information.
+      </p>
+    </div>
+
+
+    <!-- SEARCH + FILTERS -->
+    <div class="record-filters glass reveal">
+
+      <!-- SEARCH -->
+      <div class="search-box">
+
+        <i data-lucide="search" width="19"></i>
+
+        <input
+          type="text"
+          id="record-search"
+          placeholder="Search symptoms, medicines, screening or patient..."
+        >
+
+      </div>
+
+
+      <!-- SYMPTOM -->
+      <div class="filter-field">
+
+        <label for="symptom-filter">
+          Symptom
+        </label>
+
+        <select id="symptom-filter">
+
+          <option value="all">
+            All Symptoms
+          </option>
+
+          <option value="fatigue">
+            Fatigue
+          </option>
+
+          <option value="headache">
+            Headache
+          </option>
+
+          <option value="cough">
+            Cough
+          </option>
+
+          <option value="fever">
+            Fever
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <!-- RISK LEVEL -->
+      <div class="filter-field">
+
+        <label for="risk-filter">
+          Risk Level
+        </label>
+
+        <select id="risk-filter">
+
+          <option value="all">
+            All Risk Levels
+          </option>
+
+          <option value="low">
+            Low Risk
+          </option>
+
+          <option value="medium">
+            Medium Risk
+          </option>
+
+          <option value="high">
+            High Risk
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <!-- DATE -->
+      <div class="filter-field">
+
+        <label for="date-filter">
+          Visit Date
+        </label>
+
+        <select id="date-filter">
+
+          <option value="all">
+            All Dates
+          </option>
+
+          <option value="recent">
+            Recent Visits
+          </option>
+
+          <option value="older">
+            Older Visits
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <!-- LANGUAGE -->
+      <div class="filter-field">
+
+        <label for="language-filter">
+          Language
+        </label>
+
+        <select id="language-filter">
+
+          <option value="all">
+            All Languages
+          </option>
+
+          <option value="english">
+            English
+          </option>
+
+          <option value="hindi">
+            Hindi
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <!-- MEDICINE / SCREENING -->
+      <div class="filter-field">
+
+        <label for="care-filter">
+          Medicine / Screening
+        </label>
+
+        <select id="care-filter">
+
+          <option value="all">
+            All Types
+          </option>
+
+          <option value="medicine">
+            Medicine
+          </option>
+
+          <option value="screening">
+            Screening
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <!-- RESET -->
+      <button
+        id="reset-record-filters"
+        class="reset-filter-btn"
+        type="button"
+      >
+        <i data-lucide="rotate-ccw" width="17"></i>
+        Reset Filters
+      </button>
+
+    </div>
+
+
+    <!-- RECORD COUNT -->
+    <div class="record-result-info">
+
+      <span id="record-count">
+        5 records found
+      </span>
+
+    </div>
+
+
+    <!-- RECORD LIST -->
+    <div id="health-record-list" class="health-record-list">
+
+
+      <!-- RECORD 1 -->
+      <article
+        class="health-record glass reveal"
+        data-symptom="fatigue"
+        data-risk="low"
+        data-date="recent"
+        data-language="english"
+        data-care="screening"
+      >
+
+        <div class="health-record-main">
+
+          <div class="record-icon">
+            <i data-lucide="activity"></i>
+          </div>
+
+          <div>
+
+            <h3>Patient #001</h3>
+
+            <p>
+              Symptom: Fatigue
+            </p>
+
+            <small>
+              Screening: General Health Screening
+            </small>
+
+          </div>
+
+        </div>
+
+        <div class="health-record-meta">
+
+          <span class="record-status status-low">
+            Low Risk
+          </span>
+
+          <span>
+            05 Aug 2026
+          </span>
+
+          <span>
+            English
+          </span>
+
+        </div>
+
+      </article>
+
+
+      <!-- RECORD 2 -->
+      <article
+        class="health-record glass reveal"
+        data-symptom="headache"
+        data-risk="medium"
+        data-date="recent"
+        data-language="hindi"
+        data-care="medicine"
+      >
+
+        <div class="health-record-main">
+
+          <div class="record-icon">
+            <i data-lucide="pill"></i>
+          </div>
+
+          <div>
+
+            <h3>Patient #002</h3>
+
+            <p>
+              Symptom: Headache
+            </p>
+
+            <small>
+              Medicine: Prescribed Medication
+            </small>
+
+          </div>
+
+        </div>
+
+        <div class="health-record-meta">
+
+          <span class="record-status status-medium">
+            Medium Risk
+          </span>
+
+          <span>
+            07 Aug 2026
+          </span>
+
+          <span>
+            Hindi
+          </span>
+
+        </div>
+
+      </article>
+
+
+      <!-- RECORD 3 -->
+      <article
+        class="health-record glass reveal"
+        data-symptom="cough"
+        data-risk="low"
+        data-date="older"
+        data-language="english"
+        data-care="screening"
+      >
+
+        <div class="health-record-main">
+
+          <div class="record-icon">
+            <i data-lucide="stethoscope"></i>
+          </div>
+
+          <div>
+
+            <h3>Patient #003</h3>
+
+            <p>
+              Symptom: Cough
+            </p>
+
+            <small>
+              Screening: Respiratory Screening
+            </small>
+
+          </div>
+
+        </div>
+
+        <div class="health-record-meta">
+
+          <span class="record-status status-low">
+            Low Risk
+          </span>
+
+          <span>
+            28 Jul 2026
+          </span>
+
+          <span>
+            English
+          </span>
+
+        </div>
+
+      </article>
+
+
+      <!-- RECORD 4 -->
+      <article
+        class="health-record glass reveal"
+        data-symptom="fever"
+        data-risk="high"
+        data-date="recent"
+        data-language="hindi"
+        data-care="medicine"
+      >
+
+        <div class="health-record-main">
+
+          <div class="record-icon">
+            <i data-lucide="thermometer"></i>
+          </div>
+
+          <div>
+
+            <h3>Patient #004</h3>
+
+            <p>
+              Symptom: Fever
+            </p>
+
+            <small>
+              Medicine: Fever Management
+            </small>
+
+          </div>
+
+        </div>
+
+        <div class="health-record-meta">
+
+          <span class="record-status status-high">
+            High Risk
+          </span>
+
+          <span>
+            06 Aug 2026
+          </span>
+
+          <span>
+            Hindi
+          </span>
+
+        </div>
+
+      </article>
+
+
+      <!-- RECORD 5 -->
+      <article
+        class="health-record glass reveal"
+        data-symptom="fatigue"
+        data-risk="medium"
+        data-date="older"
+        data-language="english"
+        data-care="medicine"
+      >
+
+        <div class="health-record-main">
+
+          <div class="record-icon">
+            <i data-lucide="heart-pulse"></i>
+          </div>
+
+          <div>
+
+            <h3>Patient #005</h3>
+
+            <p>
+              Symptom: Fatigue
+            </p>
+
+            <small>
+              Medicine: Wellness Follow-Up
+            </small>
+
+          </div>
+
+        </div>
+
+        <div class="health-record-meta">
+
+          <span class="record-status status-medium">
+            Medium Risk
+          </span>
+
+          <span>
+            25 Jul 2026
+          </span>
+
+          <span>
+            English
+          </span>
+
+        </div>
+
+      </article>
+
+
+    </div>
+
+
+    <!-- EMPTY STATE -->
+    <div
+      id="record-empty"
+      class="record-empty glass"
+      style="display: none;"
+    >
+
+      <div class="empty-icon">
+        <i data-lucide="file-search"></i>
+      </div>
+
+      <h3>No health records found</h3>
+
+      <p>
+        No records match your current search or filters.
+      </p>
+
+      <button
+        id="empty-reset-btn"
+        class="reset-filter-btn"
+        type="button"
+      >
+        Reset Filters
+      </button>
+
+    </div>
+
+  </div>
+</section>
       <!-- AI ASSISTANT -->
+      <section id="assistant">
+        <!-- DOWNLOADABLE HEALTH SUMMARY -->
+<section id="health-summary" class="soft-bg">
+
+  <div class="container">
+
+    <div class="section-head reveal">
+
+      <span class="eyebrow">
+        Health Summary
+      </span>
+
+      <h2>
+        Your AI Health Assistant Summary
+      </h2>
+
+      <p>
+        Review your recorded symptoms, AI guidance, risk level,
+        reminders and recommended next steps in one readable summary.
+      </p>
+
+    </div>
+
+
+    <!-- SUMMARY CARD -->
+    <div id="health-summary-card" class="health-summary-card glass reveal">
+
+
+      <!-- SUMMARY HEADER -->
+      <div class="summary-header">
+
+        <div>
+
+          <div class="summary-label">
+            AI HEALTH ASSISTANT
+          </div>
+
+          <h3>
+            Personal Health Summary
+          </h3>
+
+          <p id="summary-date">
+            Generated: 08 Aug 2026
+          </p>
+
+        </div>
+
+
+        <!-- RISK BADGE -->
+        <span
+          id="summary-risk"
+          class="summary-risk risk-medium"
+        >
+          Medium Risk
+        </span>
+
+      </div>
+
+
+
+      <!-- SYMPTOMS -->
+      <div class="summary-block">
+
+        <div class="summary-block-title">
+
+          <i data-lucide="activity"></i>
+
+          <h4>
+            Symptoms
+          </h4>
+
+        </div>
+
+        <p id="summary-symptoms">
+          Fatigue, mild headache and reduced energy.
+        </p>
+
+      </div>
+
+
+
+      <!-- AI GUIDANCE -->
+      <div class="summary-block">
+
+        <div class="summary-block-title">
+
+          <i data-lucide="brain"></i>
+
+          <h4>
+            AI Guidance
+          </h4>
+
+        </div>
+
+        <p id="summary-guidance">
+          Based on the information provided, maintaining adequate
+          hydration, rest and regular sleep may be helpful.
+          If symptoms persist or worsen, seek professional medical advice.
+        </p>
+
+      </div>
+
+
+
+      <!-- MEDICINES / REMINDERS -->
+      <div class="summary-block">
+
+        <div class="summary-block-title">
+
+          <i data-lucide="pill"></i>
+
+          <h4>
+            Medicines & Reminders
+          </h4>
+
+        </div>
+
+        <ul
+          id="summary-medicines"
+          class="summary-list"
+        >
+
+          <li>
+            No medicine information provided.
+          </li>
+
+          <li>
+            Hydration reminder: 8:00 AM
+          </li>
+
+          <li>
+            Sleep reminder: 10:30 PM
+          </li>
+
+        </ul>
+
+      </div>
+
+
+
+      <!-- NEXT STEP -->
+      <div class="summary-block">
+
+        <div class="summary-block-title">
+
+          <i data-lucide="arrow-right-circle"></i>
+
+          <h4>
+            Recommended Next Step
+          </h4>
+
+        </div>
+
+        <p id="summary-next-step">
+          Monitor your symptoms and consider consulting a qualified
+          healthcare professional if symptoms continue, become severe,
+          or cause concern.
+        </p>
+
+      </div>
+
+
+
+      <!-- MEDICAL DISCLAIMER -->
+      <div class="summary-disclaimer">
+
+        <i data-lucide="triangle-alert"></i>
+
+        <div>
+
+          <strong>
+            Medical Disclaimer
+          </strong>
+
+          <p>
+            This summary is for informational and wellness purposes only.
+            AI-generated guidance is not a medical diagnosis and should
+            not replace advice, diagnosis or treatment from a qualified
+            healthcare professional. For urgent or emergency symptoms,
+            seek appropriate medical care immediately.
+          </p>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- DOWNLOAD AREA -->
+      <div class="summary-actions">
+
+        <button
+          id="download-health-summary"
+          class="btn btn-primary"
+          type="button"
+        >
+
+          <i data-lucide="download"></i>
+
+          Download Health Summary
+
+        </button>
+
+        <span
+          id="download-status"
+          class="download-status"
+        ></span>
+
+      </div>
+
+
+    </div>
+
+
+    <!-- SAMPLE EXPORT PREVIEW -->
+    <div class="sample-export glass reveal">
+
+      <div class="sample-export-header">
+
+        <div>
+
+          <span class="eyebrow">
+            Sample Export
+          </span>
+
+          <h3>
+            Example downloadable summary
+          </h3>
+
+        </div>
+
+        <i data-lucide="file-text"></i>
+
+      </div>
+
+
+      <pre id="sample-export-text">HEALTHMATE — AI HEALTH SUMMARY
+Generated: 08 Aug 2026
+
+SYMPTOMS
+Fatigue, mild headache and reduced energy.
+
+AI GUIDANCE
+Maintain adequate hydration, rest and regular sleep.
+If symptoms persist or worsen, seek professional medical advice.
+
+RISK LEVEL
+Medium Risk
+
+MEDICINES & REMINDERS
+No medicine information provided.
+Hydration reminder: 8:00 AM
+Sleep reminder: 10:30 PM
+
+NEXT STEP
+Monitor symptoms and consult a qualified healthcare professional
+if symptoms continue, worsen, or cause concern.
+
+MEDICAL DISCLAIMER
+This summary is for informational purposes only and is not a
+medical diagnosis or a replacement for professional medical advice.</pre>
+
+    </div>
+
+  </div>
+
+</section>
+
+      <\!-- AI ASSISTANT -->
       <section id="assistant">
         <div class="container chat-grid">
           <div class="reveal">
